@@ -12,7 +12,9 @@ namespace KR
         static void Main(string[] args)
 
         {
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+           User user = new User();
+            user.SGEmail = "12";
+            Console.WriteLine(user.SGEmail);
         }
     }
 }

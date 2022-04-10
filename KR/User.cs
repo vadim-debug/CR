@@ -16,14 +16,16 @@ namespace KR
     {
         Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
         protected string Name { get; set; }
+        
 
-       protected string Email
+        public string SGEmail
         {
-
-            get { return Name; }
-            set
-            { Name = value; }
+            get { return Email; }
+            set { Email = value; }
         }
+
+        protected string Email;
+        
        protected string Phone { get; set; }
 
         public void receive(string text) { }
