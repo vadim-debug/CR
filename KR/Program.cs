@@ -13,7 +13,7 @@ namespace KR
 
         {
            User user = new User();
-            user.SGEmail = "12";
+            user.SGEmail = "test@gmail.";
             Console.WriteLine(user.SGEmail);
         }
     }
