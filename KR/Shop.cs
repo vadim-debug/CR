@@ -10,26 +10,31 @@ namespace KR
     {
         void Add(IpropertyObserver observer);
         void Remove(IpropertyObserver observer);
-        void Notify(string message);
+        void Notify();
     }
     internal class Shop: ISubjectObserverable
-    {
-        private HashSet<IpropertyObserver> observers= new HashSet<IpropertyObserver> ();
-        public void Add(IEnumerable <IpropertyObserver> observer) 
-        {
-            foreach (var o in observer) Add(o); 
-        }
+    {	
+		private List<IpropertyObserver> _observers = new List<IpropertyObserver>();
 
-        public void Add(IpropertyObserver observer) => observers.Add(observer);
+		public void Add(IpropertyObserver observer)
+		{
+			Console.WriteLine("Пользователь добавлен");
+			this._observers.Add(observer);
+		}
 
+		public void Remove(IpropertyObserver observer)
+		{
+			this._observers.Remove(observer);
+			Console.WriteLine("Пользователь удалён");
+		}
+		public void Notify()
+		{
 
-        public void Remove(IpropertyObserver observer) => observers.Remove(observer);
-        public void Notify(string message) {
-            foreach (var observer in observers)
-            {
+			foreach (var observer in _observers)
+			{
+				
+			}
+		}
 
-            }
-        }
-
-    }
+	}
 }

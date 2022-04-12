@@ -10,7 +10,7 @@ namespace KR
     
     interface IpropertyObserver
     {
-        void receive(string text);
+        void Update(ISubjectObserverable subject);
     }
     internal class User: IpropertyObserver
     {
@@ -27,12 +27,12 @@ namespace KR
                 {
                     Email = value;
                 }  }
-        }
+        } 
 
         protected string Email;
         
        protected string Phone { get; set; }
 
-        public void receive(string text) { }
+        public void Update(ISubjectObserverable subject) { }
     }
 }
